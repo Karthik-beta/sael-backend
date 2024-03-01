@@ -75,7 +75,7 @@ class Command(BaseCommand):
                     print("spell_value Target: ", spell_value)
 
                     if spell_data:
-                        spell_data.target = spell_value
+                        spell_data.target = int(spell_value)
                         spell_data.save()
                         self.stdout.write(self.style.SUCCESS(f'Success: Data found for {stage}. Target updated.'))
                     else:
