@@ -88,11 +88,20 @@ class Command(BaseCommand):
                 for stage, row_index in zip(spell_stages, row_indices):
                     spell_data = spellAssemblyLineData.objects.filter(date=excel_date, stage=stage, shift='FS').last()
                     spell_value_str = str(df.iloc[row_index, 3])  # Assuming the date is in the first row, second column
-                    try:
-                        spell_value = int(spell_value_str)  # Convert the string to a float
-                    except ValueError:
-                        # Handle the case where the conversion fails (e.g., if 'nan' is not a valid float)
+                    # try:
+                    #     spell_value = int(spell_value_str)  # Convert the string to a float
+                    # except ValueError:
+                    #     # Handle the case where the conversion fails (e.g., if 'nan' is not a valid float)
+                    #     spell_value = None
+                    # print("spell_value Actual: ", type(spell_value))
+                    if spell_value_str.lower() == 'nan':
                         spell_value = None
+                    else:
+                        try:
+                            spell_value = int(spell_value_str)
+                        except ValueError:
+                            spell_value = None
+
                     print("spell_value Actual: ", type(spell_value))
 
                     if spell_data:
