@@ -2,7 +2,7 @@ import os
 import subprocess
 
 # Define the directory path
-directory_path = r"C:\GETINSOLUTION\sael-backend"
+directory_path = r"C:\GETINSOLUTION\V2\sael-backend"
 
 # Change the current working directory to the specified path
 os.chdir(directory_path)
