@@ -351,6 +351,7 @@ class spellAssemblyLineData(models.Model):
     current = models.FloatField(blank=True, null=True)
     date = models.DateField(blank=True, null=True)  
     shift = models.CharField(max_length=255, blank=True, null=True)
+    model = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         db_table = 'spell_assembly_line_data'

@@ -62,6 +62,9 @@ class Command(BaseCommand):
                 shift = 'FS'
             else:
                 shift = 'SS'
+            
+            model = str(df.iloc[1, 4])
+            print("model name : ", model)
 
             if shift == 'FS':
                 print("shift: ", shift)
@@ -76,6 +79,7 @@ class Command(BaseCommand):
 
                     if spell_data:
                         spell_data.target = int(spell_value)
+                        spell_data.model = model
                         spell_data.save()
                         self.stdout.write(self.style.SUCCESS(f'Success: Data found for {stage}. Target updated.'))
                     else:
@@ -123,6 +127,7 @@ class Command(BaseCommand):
 
                     if spell_data:
                         spell_data.target = spell_value
+                        spell_data.model = model
                         spell_data.save()
                         self.stdout.write(self.style.SUCCESS(f'Success: Data found for {stage}. Target updated.'))
                     else:
