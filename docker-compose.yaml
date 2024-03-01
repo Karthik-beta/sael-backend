@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_DB: sael
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password123
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"  # Expose PostgreSQL port to the host
+
+
+  backend:
+    build:
+      context: . 
+      dockerfile: Dockerfile  # Use your Django Dockerfile
+    ports:
+      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
+    # volumes:
+    #   - ./backend/entrypoint.sh:/entrypoint.sh  # Mount the entrypoint script
+    # entrypoint: /bin/sh -c '/entrypoint.sh'  # Set the entrypoint
+    # networks:
+    #   - WIP_network
+    # depends_on:
+    restart: always  # Add this line for automatic restart
+    #   - database  # If you have a separate database container
+
+# volumes:
+#   postgres_data:
