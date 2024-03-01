@@ -8,7 +8,7 @@ directory_path = r"C:\GETINSOLUTION\V2\sael-backend"
 os.chdir(directory_path)
 
 # Define the command to be executed
-command = 'python manage.py import3 "C:\Users\Dell\Desktop\WIP\today_shift_target.xlsx"'
+command = 'python manage.py import3 "C:\\Users\\Dell\\Desktop\\WIP\\today_shift_target.xlsx"'
 
 # Run the command using subprocess
 try:
