@@ -72,7 +72,7 @@ class Command(BaseCommand):
                 for stage, row_index in zip(spell_stages, row_indices):
                     spell_data = spellAssemblyLineData.objects.filter(date=excel_date, stage=stage, shift='FS').last()
                     spell_value = str(df.iloc[row_index, 2])  # Assuming the date is in the first row, second column
-                    print("spell_value: ", spell_value)
+                    print("spell_value Target: ", spell_value)
 
                     if spell_data:
                         spell_data.target = spell_value
@@ -93,7 +93,7 @@ class Command(BaseCommand):
                     except ValueError:
                         # Handle the case where the conversion fails (e.g., if 'nan' is not a valid float)
                         spell_value = None
-                    print("spell_value: ", type(spell_value))
+                    print("spell_value Actual: ", type(spell_value))
 
                     if spell_data:
                         spell_data.actual = spell_value
