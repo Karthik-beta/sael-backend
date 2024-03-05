@@ -24,13 +24,13 @@ def job():
     print("Error for Command 1:", error1.decode("utf-8"))
 
     # Command 2
-    command2 = f'{python_exe_path} manage.py another_command "path_to_file"'
+    command2 = f'{python_exe_path} manage.py import_weekly "C:\\Users\\Dell\\Desktop\\WIP\\weekly_target.xlsx"'
     output2, error2 = run_command(command2)
     print("Output for Command 2:", output2.decode("utf-8"))
     print("Error for Command 2:", error2.decode("utf-8"))
 
     # Command 3
-    command3 = f'{python_exe_path} manage.py yet_another_command "path_to_file"'
+    command3 = f'{python_exe_path} manage.py monthly "C:\\Users\\Dell\\Desktop\\WIP\\monthly_target.xlsx"'
     output3, error3 = run_command(command3)
     print("Output for Command 3:", output3.decode("utf-8"))
     print("Error for Command 3:", error3.decode("utf-8"))
