@@ -672,3 +672,11 @@ class spellAssemblyLineDataUpdate(generics.RetrieveUpdateDestroyAPIView):
 class ProductionAndonView(generics.ListAPIView):
     queryset = models.ProductionAndon.objects.all()
     serializer_class = serializers.ProductionAndonSerializer
+
+class WeeklyTargetView(generics.ListAPIView):
+    queryset = models.WeeklyTarget.objects.all()
+    serializer_class = serializers.WeeklyTargetSerializer
+
+class MonthlyTargetView(generics.ListAPIView):
+    queryset = models.MonthlyTarget.objects.all()
+    serializer_class = serializers.MonthlyTargetSerializer

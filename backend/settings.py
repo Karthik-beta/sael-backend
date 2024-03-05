@@ -118,8 +118,8 @@ DATABASES = {
         'NAME': 'sael',
         'USER': 'postgres',
         'PASSWORD': 'password123',
-        # 'HOST': 'localhost',
-        'HOST': '10.10.22.252',
+        'HOST': 'localhost',
+        # 'HOST': '10.10.22.252',
         # 'HOST': '13.126.36.86',
         # 'HOST': 'db', # This is the name of the PostgreSQL service in the Docker Compose file
         'PORT': '5432',

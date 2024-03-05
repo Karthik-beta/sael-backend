@@ -110,3 +110,15 @@ class ProductionAndonSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ProductionAndon
         fields = '__all__'
+
+
+class WeeklyTargetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.WeeklyTarget
+        fields = '__all__'
+
+
+class MonthlyTargetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.MonthlyTarget
+        fields = '__all__'

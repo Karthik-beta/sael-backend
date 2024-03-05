@@ -398,3 +398,43 @@ class ExcelImport(models.Model):
     class Meta:
         db_table = 'excel_import'
         
+
+class WeeklyTarget(models.Model):
+    id = models.AutoField(primary_key=True)
+    w1_target = models.IntegerField(blank=True, null=True)
+    w1_actual = models.IntegerField(blank=True, null=True)
+    w2_target = models.IntegerField(blank=True, null=True)
+    w2_actual = models.IntegerField(blank=True, null=True)
+    w3_target = models.IntegerField(blank=True, null=True)
+    w3_actual = models.IntegerField(blank=True, null=True)
+    w4_target = models.IntegerField(blank=True, null=True)
+    w4_actual = models.IntegerField(blank=True, null=True)    
+
+    class Meta:
+        db_table = 'weekly_target'
+
+
+class MonthlyTarget(models.Model):
+    id = models.AutoField(primary_key=True)
+    w1_shift = models.FloatField(blank=True, null=True)
+    w2_shift = models.FloatField(blank=True, null=True)
+    w3_shift = models.FloatField(blank=True, null=True)
+    w4_shift = models.FloatField(blank=True, null=True)
+    shift_total = models.FloatField(blank=True, null=True)
+    w1_target = models.IntegerField(blank=True, null=True)
+    w2_target = models.IntegerField(blank=True, null=True)
+    w3_target = models.IntegerField(blank=True, null=True)
+    w4_target = models.IntegerField(blank=True, null=True)
+    target_total = models.IntegerField(blank=True, null=True)
+    w1_production = models.IntegerField(blank=True, null=True)
+    w2_production = models.IntegerField(blank=True, null=True)
+    w3_production = models.IntegerField(blank=True, null=True)
+    w4_production = models.IntegerField(blank=True, null=True)
+    production_total = models.IntegerField(blank=True, null=True)
+    today_rate = models.FloatField(blank=True, null=True)
+    days_completed = models.IntegerField(blank=True, null=True)
+    holidays = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'monthly_target'
+

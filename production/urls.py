@@ -44,4 +44,7 @@ urlpatterns = [
 
     re_path(r'^productionAndon/$', views.ProductionAndonView.as_view()),
 
+    re_path(r'^weekly_target/$', views.WeeklyTargetView.as_view()), 
+    re_path(r'^monthly_target/$', views.MonthlyTargetView.as_view()),
+
 ]
