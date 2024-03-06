@@ -58,6 +58,8 @@ class Command(BaseCommand):
 
             monthly_target_instance.save()
 
+            self.stdout.write(self.style.SUCCESS('Success: Data saved successfully'))
+
         except FileNotFoundError as fe:
             self.stdout.write(self.style.ERROR(f'File not found: {str(fe)}'))
         except pd.errors.ParserError as pe:
