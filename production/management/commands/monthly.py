@@ -15,7 +15,7 @@ class Command(BaseCommand):
         try:
             # Read the Excel file using pandas
             df = pd.read_excel(file_path)
-            print("df: ", df)
+            # print("df: ", df)
 
             monthly_target_instance, created = MonthlyTarget.objects.get_or_create()
 
